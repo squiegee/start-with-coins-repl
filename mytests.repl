@@ -96,41 +96,40 @@
 
 (commit-tx)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;;Gallinas.io stuff
-;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;Gallinas.io begin testing
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-(begin-tx)
+;(begin-tx)
 
-(define-namespace 'test (sig-keyset) (sig-keyset))
-(env-data { 'ns: 'test })
-(load "poly-fungible-v1.pact")
-(load "gallinas-tester.pact")
+;(define-namespace 'test (sig-keyset) (sig-keyset))
+;(env-data { 'ns: 'test })
+;(load "poly-fungible-v1.pact")
+;(load "gallinas-tester.pact")
 
-(commit-tx)
+;(commit-tx)
 
 ;Create account test
-(begin-tx)
-(create-table test.collect-gallinas.supplies-table)
-(create-table test.collect-gallinas.gledger)
-(create-table test.collect-gallinas.uri-table)
-(create-table test.collect-gallinas.gallinas-table)
-(create-table test.collect-gallinas.total-gallinas-table)
-(create-table test.collect-gallinas.marketplace-table)
-(create-table test.collect-gallinas.gmarketplace)
-(create-table test.collect-gallinas.gift-release-table)
-(create-table test.collect-gallinas.gift-voucher-table)
-(env-data { "emily" : ["keys1"], "doug": ["keys2"], "gallina-bank": ["keys3"], "prev-block-hash": "lPqiP54vy_E3rAkvgQVme2FreVXpVhOV3dIJYENZ2Zk" })
-(env-keys ["keys1", "keys2", "keys3", "keys4"])
-(define-keyset 'emily (read-keyset "emily"))
-(define-keyset 'doug (read-keyset "emily"))
-(define-keyset 'gallina-bank (read-keyset "gallina-bank"))
-(test.collect-gallinas.create-account "TestMintBurn" "emily" (read-keyset "emily"))
-;account cant be created due to checking coin contract for guard now, good!
-;(test.collect-gallinas.create-account "TestMintBurn" "emilySoWhat" (read-keyset "doug"))
-(test.collect-gallinas.get-ids)
-(test.collect-gallinas.get-balance "TestMintBurn" "emily")
-(commit-tx)
+;(begin-tx)
+;(create-table test.collect-gallinas.supplies-table)
+;(create-table test.collect-gallinas.gledger)
+;(create-table test.collect-gallinas.uri-table)
+;(create-table test.collect-gallinas.gallinas-table)
+;(create-table test.collect-gallinas.total-gallinas-table)
+;(create-table test.collect-gallinas.marketplace-table)
+;(create-table test.collect-gallinas.gmarketplace)
+;(create-table test.collect-gallinas.gift-release-table)
+;(create-table test.collect-gallinas.gift-voucher-table)
+;(env-data { "emily" : ["keys1"], "doug": ["keys2"], "gallina-bank": ["keys3"], "prev-block-hash": "lPqiP54vy_E3rAkvgQVme2FreVXpVhOV3dIJYENZ2Zk" })
+;(env-keys ["keys1", "keys2", "keys3", "keys4"])
+;(define-keyset 'emily (read-keyset "emily"))
+;(define-keyset 'doug (read-keyset "emily"))
+;(define-keyset 'gallina-bank (read-keyset "gallina-bank"))
+;(test.collect-gallinas.create-account "TestMintBurn" "emily" (read-keyset "emily"))
+;(test.collect-gallinas.create-account "TestMintBurn" "imnotreal" (read-keyset "doug"))
+;(test.collect-gallinas.get-ids)
+;(test.collect-gallinas.get-balance "TestMintBurn" "emily")
+;(commit-tx)
 
-(verify "test.collect-gallinas")
+;(verify "test.collect-gallinas")
